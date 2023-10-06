@@ -1,4 +1,4 @@
-package fciencias.dispositivosmoviles.tarea2;
+package com.example.tarea2;
 
 import org.junit.Test;
 
