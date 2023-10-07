@@ -102,17 +102,24 @@
                     android:textStyle="bold"
                     android:text="Sexo:" />
 
-                <RadioButton
-                    android:id="@+id/macho"
+                <RadioGroup
+                    android:id="@+id/radio_group_sexo"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:text="M" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/hembra"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:text="H" />
+                    <RadioButton
+                        android:id="@+id/macho"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="M" />
+
+                    <RadioButton
+                        android:id="@+id/hembra"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="H" />
+                </RadioGroup>
             </LinearLayout>
 
         </LinearLayout>
