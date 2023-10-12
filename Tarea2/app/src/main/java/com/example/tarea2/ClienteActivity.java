@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class ClienteActivity extends AppCompatActivity {
 
@@ -17,8 +17,6 @@ public class ClienteActivity extends AppCompatActivity {
     TextView respuesta;
     RadioButton r1, r2;
     CheckBox cb1, cb2;
-    TextInputLayout nombre;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +29,20 @@ public class ClienteActivity extends AppCompatActivity {
         r2 = findViewById(R.id.rdb2);
         cb1 = findViewById(R.id.cb1);
         cb2 = findViewById(R.id.cb2);
-        nombre = findViewById(R.id.nombrePersona);
+
+        ImageView imageView = findViewById(R.id.logo);
+        TextView companyNameTextView = findViewById(R.id.nombre);
+
+        imageView.setImageResource(R.drawable.logo);
+        companyNameTextView.setText("PETTY");
+
+        boton1 = (Button)findViewById(R.id.button1);
+        respuesta = (TextView)findViewById(R.id.respuesta);
+        r1=(RadioButton)findViewById(R.id.rdb1);
+        r2=(RadioButton)findViewById(R.id.rdb2);
+        cb1=(CheckBox)findViewById(R.id.cb1);
+        cb2=(CheckBox)findViewById(R.id.cb2);
+
 
         // Configuramos el evento clic para el botón
         boton1.setOnClickListener(new View.OnClickListener() {
