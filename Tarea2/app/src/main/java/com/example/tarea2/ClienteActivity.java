@@ -16,6 +16,9 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
 public class ClienteActivity extends AppCompatActivity {
 
     // Agregamos nuestros componentes
@@ -23,6 +26,7 @@ public class ClienteActivity extends AppCompatActivity {
     RadioGroup grupo2;
     Button boton1;
     TextView respuesta;
+    TextInputEditText nombre;
     RadioButton r1, r2;
     CheckBox cb1, cb2;
     @Override
@@ -37,6 +41,7 @@ public class ClienteActivity extends AppCompatActivity {
         // Asociamos componentes con sus respectivos IDs
         boton1 = findViewById(R.id.button1);
         respuesta = findViewById(R.id.respuesta);
+        nombre = findViewById(R.id.nombrePersona);
         r1 = findViewById(R.id.rdb1);
         r2 = findViewById(R.id.rdb2);
         cb1 = findViewById(R.id.cb1);
@@ -49,6 +54,7 @@ public class ClienteActivity extends AppCompatActivity {
         imageView.setImageResource(R.drawable.logo);
         boton1 = (Button)findViewById(R.id.button1);
         respuesta = (TextView)findViewById(R.id.respuesta);
+        nombre = (TextInputEditText) findViewById(R.id.nombrePersona);
         r1=(RadioButton)findViewById(R.id.rdb1);
         r2=(RadioButton)findViewById(R.id.rdb2);
         cb1=(CheckBox)findViewById(R.id.cb1);
@@ -59,11 +65,15 @@ public class ClienteActivity extends AppCompatActivity {
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!r1.isChecked() && !r2.isChecked() && !cb1.isChecked() && !cb2.isChecked()) {
-                    respuesta.setText("No ha seleccionado nada");
+                if (nombre.getText().toString().trim().isEmpty() && (!r1.isChecked() || !r2.isChecked())) {
+                    respuesta.setText("Favor de llenar los campos");
+                } else if (r1.isChecked() && (!cb1.isChecked() && !cb2.isChecked())) {
+                    respuesta.setText("Favor de llenar los campos");
+                } else {
+                    Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
+                    respuesta.setText("");
+                    startActivity(intent);
                 }
-                Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
-                startActivity(intent);
             }
         });
 

@@ -101,17 +101,17 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="50dp">
 
             <Button
-                android:id="@+id/fam"
+                android:id="@+id/prof"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginRight="40dp"
                 android:paddingTop="10dp"
                 android:background="@drawable/btn_shape_round"
                 android:drawableTop="@drawable/family"
-                android:text="Familia"
+                android:text="Perfil"
                 android:textColor="@color/white"
                 android:backgroundTint="#4a6f22"
                 android:drawableTint="@color/white"/>

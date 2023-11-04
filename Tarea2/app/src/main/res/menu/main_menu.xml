@@ -5,7 +5,7 @@
             android:title="Inicio"
             android:checkable="true"/>
         <item android:id="@+id/family"
-            android:title="Familia"
+            android:title="Perfil"
             android:checkable="true"/>
         <item android:id="@+id/groom"
             android:title="Grooming"

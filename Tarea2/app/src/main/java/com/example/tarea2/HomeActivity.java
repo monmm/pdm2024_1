@@ -1,8 +1,12 @@
 package com.example.tarea2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -16,6 +20,11 @@ public class HomeActivity extends DrawerMenuActivity {
 
     private TextView titulo;
 
+    private Button profileButton;
+    private Button groomButton;
+    private Button shopButton;
+    private Button pharmButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +35,34 @@ public class HomeActivity extends DrawerMenuActivity {
         titulo.setText("Inicio");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        //setContentView(R.layout.home);
+        profileButton = findViewById(R.id.prof);
+        groomButton = findViewById(R.id.groom);
+        shopButton = findViewById(R.id.shop);
+        pharmButton = findViewById(R.id.drug);
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        groomButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        shopButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        pharmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
