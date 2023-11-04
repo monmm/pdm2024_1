@@ -25,6 +25,8 @@ public class HomeActivity extends DrawerMenuActivity {
         titulo = getSupportActionBar().getCustomView().findViewById(R.id.action_bar_title);
         titulo.setText("Inicio");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        setContentView(R.layout.home);
     }
 
     @Override

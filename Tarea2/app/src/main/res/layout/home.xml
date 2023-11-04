@@ -108,9 +108,11 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_marginRight="40dp"
+                android:paddingTop="10dp"
                 android:background="@drawable/btn_shape_round"
                 android:drawableTop="@drawable/family"
                 android:text="Familia"
+                android:textColor="@color/white"
                 android:backgroundTint="#4a6f22"
                 android:drawableTint="@color/white"/>
 
@@ -118,9 +120,11 @@
                 android:id="@+id/groom"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
+                android:paddingTop="12dp"
                 android:background="@drawable/btn_shape_round"
                 android:drawableTop="@drawable/grooming"
                 android:text="Grooming"
+                android:textColor="@color/white"
                 android:backgroundTint="#4a6f22"
                 android:drawableTint="@color/white"/>
 
@@ -137,11 +141,12 @@
                 android:id="@+id/shop"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:paddingTop="8dp"
+                android:paddingTop="12dp"
                 android:layout_marginRight="40dp"
                 android:background="@drawable/btn_shape_round"
                 android:drawableTop="@drawable/petshop"
                 android:text="Tienda"
+                android:textColor="@color/white"
                 android:backgroundTint="#4a6f22"
                 android:drawableTint="@color/white"/>
 
@@ -149,11 +154,12 @@
                 android:id="@+id/drug"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:paddingTop="8dp"
+                android:paddingTop="12dp"
                 android:background="@drawable/btn_shape_round"
                 android:drawableTop="@drawable/pills"
                 android:backgroundTint="#4a6f22"
                 android:drawableTint="@color/white"
+                android:textColor="@color/white"
                 android:text="Farmacia" />
 
         </LinearLayout>
@@ -166,7 +172,7 @@
         android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="#4a6f22"
+        android:background="#FFC107"
         android:layout_alignParentBottom="true">
 
         <TextView

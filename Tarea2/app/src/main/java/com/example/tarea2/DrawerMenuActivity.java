@@ -45,22 +45,36 @@ public abstract class DrawerMenuActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 item.setChecked(true);
-                Intent opcionElegida;
+                String mensaje = null;
+                Intent opcionElegida = null;
+
                 if (item.getItemId() == R.id.home) {
                     opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
+                    mensaje = "Seleccionaste Home";
                 } else if (item.getItemId() == R.id.family) {
-                    opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
-                }
-                else if (item.getItemId() == R.id.groom) {
-                    opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
+                    mensaje = "Seleccionaste Family";
+                } else if (item.getItemId() == R.id.groom) {
+                    mensaje = "Seleccionaste Groom";
                 } else if (item.getItemId() == R.id.shop) {
-                    opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
+                    mensaje = "Seleccionaste Shop";
                 } else if (item.getItemId() == R.id.pharm) {
-                    opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
+                    mensaje = "Seleccionaste Pharm";
                 } else {
                     return false;
                 }
-                startActivity(opcionElegida);
+                // Eliminar después
+                if (mensaje != null) {
+                    Toast.makeText(DrawerMenuActivity.this, mensaje, Toast.LENGTH_SHORT).show();
+                    try {
+                        Thread.sleep(2000);
+                        item.setChecked(false);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                if (opcionElegida != null) {
+                    startActivity(opcionElegida);
+                }
                 return false;
             }
         });
@@ -75,11 +89,11 @@ public abstract class DrawerMenuActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.item1){
-            Toast.makeText(this,"Iniciaremos sesión pronto...", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Cerraremos sesión pronto...", Toast.LENGTH_LONG).show();
         }else if(id == R.id.item2) {
-            Toast.makeText(this, "Ayuda en el servicio de Petty, pronto nos comunicaremos contigo", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Pronto nos comunicaremos contigo...", Toast.LENGTH_LONG).show();
         }else if(id == R.id.item3) {
-            Toast.makeText(this, "Creadores: Monica Miranda Mijangos, Gretel Penélope Cortés Macias", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Creadores: @monmm y @cortezgretel", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }
