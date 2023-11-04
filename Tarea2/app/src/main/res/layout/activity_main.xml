@@ -45,53 +45,61 @@
         android:orientation="vertical">
 
 
-        <RadioButton
-            android:id="@+id/rdb1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sí"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="275dp"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.231"
+            app:layout_constraintHorizontal_bias="0.698"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.477" />
+            app:layout_constraintVertical_bias="0.715">
 
-        <RadioButton
-            android:id="@+id/rdb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="No"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.713"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.477" />
+            <CheckBox
+                android:id="@+id/cb1"
+                android:layout_width="147dp"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="false"
+                android:text="Si" />
 
-        <CheckBox
-            android:id="@+id/cb1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gato"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.241"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.707" />
+            <CheckBox
+                android:id="@+id/cb2"
+                android:layout_width="132dp"
+                android:layout_height="wrap_content"
+                android:scrollHorizontally="false"
+                android:text="No" />
 
-        <CheckBox
-            android:id="@+id/cb2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Perro"
-            app:layout_constraintBottom_toBottomOf="parent"
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="275dp"
+            android:layout_height="54dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/button1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.747"
+            app:layout_constraintHorizontal_bias="0.698"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.707" />
+            app:layout_constraintVertical_bias="0.572">>
+
+
+            <RadioButton
+                android:id="@+id/rdb1"
+                android:layout_width="137dp"
+                android:layout_height="wrap_content"
+                android:text="Sí" />
+
+            <RadioButton
+                android:id="@+id/rdb2"
+                android:layout_width="134dp"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="No" />
+
+        </RadioGroup>
 
         <Button
             android:id="@+id/button1"
@@ -136,10 +144,10 @@
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.043"
+            app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.076" />
+            app:layout_constraintVertical_bias="0.098" />
 
         <TextView
             android:id="@+id/textView2"
@@ -148,21 +156,28 @@
             android:text="¿Tienes mascotas?"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintHorizontal_bias="0.512"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.346" />
+            app:layout_constraintVertical_bias="0.345" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Gato o perro?"
+            android:text="¿Deseas recibir notificaciones?"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.59" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
