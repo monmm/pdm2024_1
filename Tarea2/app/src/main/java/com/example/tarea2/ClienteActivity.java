@@ -1,5 +1,6 @@
 package com.example.tarea2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,13 +27,12 @@ public class ClienteActivity extends AppCompatActivity {
     CheckBox cb1, cb2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTitle("Petty Cliente");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        }
 
+        // Ocultar el ActionBar
+        getSupportActionBar().hide();
+
+        setContentView(R.layout.activity_main);
 
         // Asociamos componentes con sus respectivos IDs
         boton1 = findViewById(R.id.button1);
@@ -90,36 +90,6 @@ public class ClienteActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu){
-        getMenuInflater().inflate(R.menu.overflow, menu);
-        return true;
-    }
-
-
-
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-
-        if(id == R.id.item1){
-            Toast.makeText(this,"Iniciaremos sesión pronto...", Toast.LENGTH_LONG).show();
-        }else if(id == R.id.item2) {
-            Toast.makeText(this, "Ayuda en el servicio de Petty, pronto nos comunicaremos contigo", Toast.LENGTH_LONG).show();
-        }else if(id == R.id.item3) {
-            Toast.makeText(this, "Creadores: Monica Miranda Mijangos, Gretel Penélope Cortés Macias", Toast.LENGTH_LONG).show();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // Verificar si la ActionBar no es nula antes de llamar a 'show()'
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().show();
-        }
     }
 
 }

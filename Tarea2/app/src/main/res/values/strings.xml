@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Tarea2</string>
 
-    <string name="item1">Iniciar sesión</string>
+    <string name="item1">Cerrar sesión</string>
     <string name="item2">Ayuda</string>
     <string name="item3">Informacion</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
 
 </resources>

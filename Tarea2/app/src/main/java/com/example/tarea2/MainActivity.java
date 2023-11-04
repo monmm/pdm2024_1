@@ -1,5 +1,6 @@
 package com.example.tarea2;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       // Ocultar el ActionBar
+        getSupportActionBar().hide();
 
         // interfaz de inicio
         setContentView(R.layout.inicio);

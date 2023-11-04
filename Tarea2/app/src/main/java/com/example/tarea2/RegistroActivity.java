@@ -31,7 +31,10 @@ public class RegistroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.registro);  // Asegúrate de tener el layout correcto (activity_registro.xml)
+        // Ocultar el ActionBar
+        getSupportActionBar().hide();
+        // Vista
+        setContentView(R.layout.registro);
 
         registrarButton = findViewById(R.id.registrar);
         cancelarButton = findViewById(R.id.cancel);
