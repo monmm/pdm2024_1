@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -25,6 +26,7 @@ public class ClienteActivity extends AppCompatActivity {
     RadioGroup grupo1;
     RadioGroup grupo2;
     Button boton1;
+    ImageButton back;
     TextView respuesta;
     TextInputEditText nombre;
     RadioButton r1, r2;
@@ -40,6 +42,7 @@ public class ClienteActivity extends AppCompatActivity {
 
         // Asociamos componentes con sus respectivos IDs
         boton1 = findViewById(R.id.button1);
+        back = findViewById(R.id.back);
         respuesta = findViewById(R.id.respuesta);
         nombre = findViewById(R.id.nombrePersona);
         r1 = findViewById(R.id.rdb1);
@@ -53,12 +56,21 @@ public class ClienteActivity extends AppCompatActivity {
 
         imageView.setImageResource(R.drawable.logo);
         boton1 = (Button)findViewById(R.id.button1);
+        back = (ImageButton) findViewById(R.id.back);
         respuesta = (TextView)findViewById(R.id.respuesta);
         nombre = (TextInputEditText) findViewById(R.id.nombrePersona);
         r1=(RadioButton)findViewById(R.id.rdb1);
         r2=(RadioButton)findViewById(R.id.rdb2);
         cb1=(CheckBox)findViewById(R.id.cb1);
         cb2=(CheckBox)findViewById(R.id.cb2);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ClienteActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         // Configuramos el evento clic para el botón
@@ -71,7 +83,6 @@ public class ClienteActivity extends AppCompatActivity {
                     respuesta.setText("Favor de llenar los campos");
                 } else {
                     Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
-                    respuesta.setText("");
                     startActivity(intent);
                 }
             }

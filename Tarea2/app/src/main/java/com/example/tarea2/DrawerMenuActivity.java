@@ -90,7 +90,14 @@ public abstract class DrawerMenuActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.item1){
-            Toast.makeText(this,"Cerraremos sesión pronto...", Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Cerrando sesión...", Toast.LENGTH_LONG).show();
+            try {
+                Thread.sleep(3000);
+                Intent intent = new Intent(DrawerMenuActivity.this, MainActivity.class);
+                startActivity(intent);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }else if(id == R.id.item2) {
             Toast.makeText(this, "Pronto nos comunicaremos contigo...", Toast.LENGTH_LONG).show();
         }else if(id == R.id.item3) {
