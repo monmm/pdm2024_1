@@ -30,7 +30,8 @@ public abstract class DrawerMenuActivity extends AppCompatActivity {
         View mainMenu = inflater.inflate(R.layout.drawer_menu, null, false);
         ViewStub activityContent = mainMenu.findViewById(R.id.contenido_vista);
         activityContent.setLayoutResource(obtenerIdVistaPrincipal());
-
+        // Infla el contenido del ViewStub
+        View contentView = activityContent.inflate();
         setContentView(mainMenu);
 
         drawerLayout = findViewById(R.id.drawer_main_menu);
