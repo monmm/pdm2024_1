@@ -46,6 +46,15 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
+        registrarButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Iniciar la actividad para clientes
+                Intent intent = new Intent(RegistroActivity.this, ClienteActivity.class);
+                startActivity(intent);
+            }
+        });
+
         radioGroup = findViewById(R.id.radio_group_sexo);
         machoRadioButton = findViewById(R.id.macho);
         hembraRadioButton = findViewById(R.id.hembra);

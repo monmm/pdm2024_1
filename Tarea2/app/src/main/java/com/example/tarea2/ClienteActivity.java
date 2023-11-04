@@ -2,6 +2,7 @@ package com.example.tarea2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,6 +62,8 @@ public class ClienteActivity extends AppCompatActivity {
                 if (!r1.isChecked() && !r2.isChecked() && !cb1.isChecked() && !cb2.isChecked()) {
                     respuesta.setText("No ha seleccionado nada");
                 }
+                Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
+                startActivity(intent);
             }
         });
 
