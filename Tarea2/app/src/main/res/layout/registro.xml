@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <!-- Encabezado -->
     <LinearLayout
@@ -20,7 +21,10 @@
             android:layout_height="match_parent"
             android:background="#FFC107"
             android:scaleType="center"
-            android:src="@drawable/logo"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:paddingLeft="25dp"
+            android:src="@drawable/logo_removebg"
             android:contentDescription="Logo App">
         </ImageView>
 
@@ -47,6 +51,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Registro" />
 
@@ -76,7 +81,8 @@
                 android:id="@+id/mascota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:textColor="@color/black"
+        android:textStyle="bold"
                 android:text="Nombre de la mascota" />
 
             <EditText
@@ -99,7 +105,8 @@
                     android:id="@+id/sexo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
+                    android:textColor="@color/black"
+        android:textStyle="bold"
                     android:text="Sexo:" />
 
                 <RadioGroup
@@ -112,12 +119,14 @@
                         android:id="@+id/macho"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="M" />
 
                     <RadioButton
                         android:id="@+id/hembra"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:textColor="@color/black"
                         android:text="H" />
                 </RadioGroup>
             </LinearLayout>
@@ -133,6 +142,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Fecha de Nacimiento o Registro" />
 
@@ -154,6 +164,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Raza" />
 
@@ -175,6 +186,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Dueño" />
 
@@ -195,6 +207,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Teléfono" />
 
@@ -216,6 +229,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Dirección" />
 
@@ -236,6 +250,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:text="Código Postal" />
 
@@ -263,14 +278,20 @@
             android:id="@+id/cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
             android:layout_marginRight="25dp"
+            android:background="@drawable/btn_shape_round"
+            android:textColor="@color/white"
             android:text="Cancelar" />
 
         <Button
             android:id="@+id/registrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/btn_shape_round"
+            android:textColor="@color/white"
             android:text="Registrar" />
 
     </LinearLayout>
