@@ -1,6 +1,7 @@
 package com.example.tarea2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -11,9 +12,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 
 
@@ -37,7 +35,10 @@ public class HomeActivity extends DrawerMenuActivity {
         titulo.setText("Inicio");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        usuario = getIntent().getStringExtra("USR");
+        // Recuperar el usuario desde SharedPreferences
+        SharedPreferences prefs = getSharedPreferences("Nombre_Preferencias", MODE_PRIVATE);
+        usuario = prefs.getString("usuario", "valor_por_defecto");
+
 
         profileButton = findViewById(R.id.prof);
         groomButton = findViewById(R.id.groom);
@@ -47,8 +48,6 @@ public class HomeActivity extends DrawerMenuActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                Log.v("MyActivity", "Valor de USR: " + usuario);
-                intent.putExtra("USR", usuario);
                 startActivity(intent);
             }
         });

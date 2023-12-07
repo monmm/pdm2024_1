@@ -4,12 +4,9 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,12 +15,9 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tarea2.bdd.MascotaBDD;
-import com.example.tarea2.bdd.MascotaSQL;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class ClienteActivity extends AppCompatActivity {
 
@@ -94,7 +88,11 @@ public class ClienteActivity extends AppCompatActivity {
                     mascota.openForRead();
                     if (mascota.existeDueno(usuario)) {
                         Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
-                        intent.putExtra("USR", usuario);
+                        // Guardar el usuario en SharedPreferences
+                        SharedPreferences prefs = getSharedPreferences("Nombre_Preferencias", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString("usuario", usuario);
+                        editor.apply();
                         startActivity(intent);
                     } else {
                         respuesta.setText("Favor de registrarse");
