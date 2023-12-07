@@ -80,10 +80,12 @@ public class MascotaBDD {
         return bdd.update(TABLA_MASCOTAS, content, COL_ID + " = " + id, null);
     }
 
-    public int removeMascota(String nombre, String dueno) {
-        return bdd.delete(TABLA_MASCOTAS, COL_NOMBRE + " = '" + nombre +
-                "' AND " + COL_DUENO + " = '" + dueno + "'", null);
+    public int removeMascota(int id, String nombre) {
+        int resultado = bdd.delete(TABLA_MASCOTAS, COL_ID + " = ? AND " + COL_NOMBRE + " = ?",
+                new String[]{String.valueOf(id), nombre});
+        return resultado;
     }
+
 
     public Mascota getMascota(String nombre, String dueno) {
         Cursor c = bdd.query(TABLA_MASCOTAS,
@@ -91,6 +93,7 @@ public class MascotaBDD {
                         COL_RAZA, COL_DUENO, COL_TELEFONO, COL_DIRECCION, COL_CP},
                 COL_NOMBRE + " LIKE \"" + nombre + "\" AND " + COL_DUENO + " LIKE \"" + dueno + "\"",
                 null, null, null, COL_NOMBRE);
+        c.close();
         return cursorToMascota(c);
     }
 

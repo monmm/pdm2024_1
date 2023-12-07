@@ -1,6 +1,8 @@
 package com.example.tarea2.modelos;
 
-public class Mascota {
+import java.io.Serializable;
+
+public class Mascota implements Serializable {
 
     private int id;
     private String nombre;
