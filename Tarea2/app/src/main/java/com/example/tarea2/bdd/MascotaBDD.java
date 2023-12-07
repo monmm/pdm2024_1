@@ -113,10 +113,10 @@ public class MascotaBDD {
         return mascota;
     }
 
-    public ArrayList<Mascota> getAllMascotas() {
+    public ArrayList<Mascota> getAllMascotas(String dueno) {
         Cursor c = bdd.query(TABLA_MASCOTAS, new String[]{COL_ID, COL_NOMBRE, COL_SEXO,
                         COL_NACIMIENTO, COL_RAZA, COL_DUENO, COL_TELEFONO, COL_DIRECCION, COL_CP},
-                null, null, null, null, COL_NOMBRE);
+                COL_DUENO + " LIKE \"" + dueno + "\"", null, null, null, COL_NOMBRE);
 
         if (c.getCount() == 0) {
             c.close();
@@ -140,6 +140,29 @@ public class MascotaBDD {
         c.close();
         return mascotaList;
     }
+
+    public boolean existeDueno(String nombreDueno) {
+        Cursor cursor = bdd.query(
+                true, // distinct
+                TABLA_MASCOTAS, // tabla
+                new String[]{COL_DUENO}, // columnas
+                COL_DUENO + "=?", // where
+                new String[]{nombreDueno}, // valores where
+                null, // groupBy
+                null, // having
+                null, // orderBy
+                null // limit
+        );
+
+        boolean existe = cursor != null && cursor.getCount() > 0;
+
+        if (cursor != null) {
+            cursor.close();
+        }
+
+        return existe;
+    }
+
 
     public void resetDatabase() {
         mascotas.getWritableDatabase().execSQL("DROP TABLE IF EXISTS " + TABLA_MASCOTAS);

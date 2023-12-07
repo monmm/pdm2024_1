@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +20,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.tarea2.bdd.MascotaBDD;
+import com.example.tarea2.bdd.MascotaSQL;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -72,18 +77,28 @@ public class ClienteActivity extends AppCompatActivity {
             }
         });
 
+        MascotaBDD mascota = new MascotaBDD(this);
 
         // Configuramos el evento clic para el botón
         boton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nombre.getText().toString().trim().isEmpty() && (!r1.isChecked() || !r2.isChecked())) {
+                String usuario = nombre.getText().toString().trim();
+                Log.v("MyActivity", "Valor de USR: " + usuario);
+
+                if (usuario.isEmpty() || !(r1.isChecked() || r2.isChecked())) {
                     respuesta.setText("Favor de llenar los campos");
                 } else if (r1.isChecked() && (!cb1.isChecked() && !cb2.isChecked())) {
-                    respuesta.setText("Favor de llenar los campos");
+                    respuesta.setText("Favor de seleccionar un tipo");
                 } else {
-                    Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
-                    startActivity(intent);
+                    mascota.openForRead();
+                    if (mascota.existeDueno(usuario)) {
+                        Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
+                        intent.putExtra("USR", usuario);
+                        startActivity(intent);
+                    } else {
+                        respuesta.setText("Favor de registrarse");
+                    }
                 }
             }
         });

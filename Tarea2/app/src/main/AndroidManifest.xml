@@ -30,7 +30,7 @@
         <activity
             android:name=".ProfileActivity"
             android:label="Profile"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".HomeActivity">
         </activity>
         <activity
             android:name=".ClienteActivity"
