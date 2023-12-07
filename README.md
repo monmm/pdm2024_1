@@ -16,4 +16,4 @@ Allí encontremos nuestra base de datos ``mascota.db`` de SQLite.
 Puede descargarse y observarse con una herramienta externa, o bien,  
 se puede utilizar el plugin de android studio para observar archivos con extensión ``.db``.
 
-![ejemplo_mascotas.db](ss_db.png)
+![ejemplo_mascotas.db](ss-db.png)
