@@ -42,7 +42,8 @@ public class HomeActivity extends DrawerMenuActivity {
         profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
         groomButton.setOnClickListener(new View.OnClickListener() {

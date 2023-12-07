@@ -28,16 +28,21 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity
             android:name=".ClienteActivity"
             android:label="Cliente"
             android:theme="@style/Base.Theme.Tarea2"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity
             android:name=".RegistroActivity"
             android:label="Registro"
             android:parentActivityName=".MainActivity">
         </activity>
-
         <activity
             android:name=".HomeActivity"
             android:label="Home"
