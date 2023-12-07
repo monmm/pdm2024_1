@@ -94,6 +94,36 @@ public class MascotaBDD {
         return cursorToMascota(c);
     }
 
+    public String getDirDueno(String nombreDueno, String tel) {
+        Cursor c = bdd.query(
+                true, // distinct
+                TABLA_MASCOTAS, // tabla
+                new String[]{COL_DUENO, COL_TELEFONO, COL_DIRECCION, COL_CP}, // columnas
+                COL_DUENO + "=? AND " + COL_TELEFONO + "=?", // where
+                new String[]{nombreDueno, tel}, // valores where
+                null, // groupBy
+                null, // having
+                null, // orderBy
+                "1" // limit
+        );
+
+        if (c != null && c.moveToFirst()) {
+            // Obtiene el índice de las columnas desde el Cursor
+            int indexDir = c.getColumnIndexOrThrow(COL_DIRECCION);
+            int indexCp = c.getColumnIndexOrThrow(COL_CP);
+
+            String dir = c.getString(indexDir) + " " + c.getString(indexCp);
+
+            c.close();
+            return dir;
+        } else {
+            if (c != null) {
+                c.close();
+            }
+            return null;
+        }
+    }
+
     public Mascota cursorToMascota(Cursor c) {
         if (c.getCount() == 0) {
             c.close();
@@ -141,13 +171,13 @@ public class MascotaBDD {
         return mascotaList;
     }
 
-    public boolean existeDueno(String nombreDueno) {
+    public boolean existeDueno(String nombreDueno, String tel) {
         Cursor cursor = bdd.query(
                 true, // distinct
                 TABLA_MASCOTAS, // tabla
-                new String[]{COL_DUENO}, // columnas
-                COL_DUENO + "=?", // where
-                new String[]{nombreDueno}, // valores where
+                new String[]{COL_DUENO, COL_TELEFONO}, // columnas
+                COL_DUENO + "=? AND " + COL_TELEFONO + "=?", // where
+                new String[]{nombreDueno, tel}, // valores where
                 null, // groupBy
                 null, // having
                 null, // orderBy

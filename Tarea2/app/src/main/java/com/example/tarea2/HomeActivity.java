@@ -18,6 +18,7 @@ public class HomeActivity extends DrawerMenuActivity {
 
     private TextView titulo;
     private String usuario;
+    private String telefono;
 
     private Button profileButton;
     private Button groomButton;
@@ -37,6 +38,7 @@ public class HomeActivity extends DrawerMenuActivity {
         // Recuperar el usuario desde SharedPreferences
         SharedPreferences prefs = getSharedPreferences("Nombre_Preferencias", MODE_PRIVATE);
         usuario = prefs.getString("usuario", "valor_por_defecto");
+        telefono = prefs.getString("telefono", "valor_por_defecto");
 
         profileButton = findViewById(R.id.prof);
         groomButton = findViewById(R.id.groom);

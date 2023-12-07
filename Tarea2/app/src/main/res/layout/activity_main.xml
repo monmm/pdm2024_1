@@ -69,7 +69,7 @@
             app:layout_constraintHorizontal_bias="0.698"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.715"
+            app:layout_constraintVertical_bias="0.655"
             android:gravity="center"
             android:paddingHorizontal="10dp">
 
@@ -92,28 +92,31 @@
 
         <RadioGroup
             android:id="@+id/radioGroup2"
-            android:layout_width="275dp"
+            android:layout_width="match_parent"
             android:layout_height="54dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="@id/button1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.698"
+            android:gravity="center_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.572">>
+            app:layout_constraintVertical_bias="0.582"
+            android:weightSum="6">
 
 
             <RadioButton
                 android:id="@+id/rdb1"
-                android:layout_width="137dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Sí" />
 
             <RadioButton
                 android:id="@+id/rdb2"
-                android:layout_width="134dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:checked="false"
+                android:layout_weight="1"
                 android:text="No" />
 
         </RadioGroup>
@@ -153,10 +156,37 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.178" />
+            app:layout_constraintVertical_bias="0.124" />
 
         <TextView
             android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:text="Ingrese su numero telefonico:"
+            android:textAlignment="textStart"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.077"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.210" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/telPersona"
+            android:layout_width="383dp"
+            android:layout_height="48dp"
+            android:hint="numero telefonico"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.258"
+            android:inputType="phone"/>
+
+        <TextView
+            android:id="@+id/tel"
             android:layout_width="wrap_content"
             android:layout_height="19dp"
             android:text="Ingrese su nombre completo:"
@@ -168,24 +198,25 @@
             app:layout_constraintHorizontal_bias="0.077"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.098" />
+            app:layout_constraintVertical_bias="0.086" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="¿Deseas recibir notificaciones?"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.512"
+            android:gravity="center_horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.345" />
+            app:layout_constraintVertical_bias="0.405" />
 
         <TextView
             android:id="@+id/textView3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Tipo de notificaciones que deseas recibir:"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

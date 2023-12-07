@@ -28,6 +28,7 @@ public class ClienteActivity extends AppCompatActivity {
     ImageButton back;
     TextView respuesta;
     TextInputEditText nombre;
+    TextInputEditText telefono;
     RadioButton r1, r2;
     CheckBox cb1, cb2;
     @Override
@@ -44,6 +45,7 @@ public class ClienteActivity extends AppCompatActivity {
         back = findViewById(R.id.back);
         respuesta = findViewById(R.id.respuesta);
         nombre = findViewById(R.id.nombrePersona);
+        telefono = findViewById(R.id.telPersona);
         r1 = findViewById(R.id.rdb1);
         r2 = findViewById(R.id.rdb2);
         cb1 = findViewById(R.id.cb1);
@@ -58,6 +60,7 @@ public class ClienteActivity extends AppCompatActivity {
         back = (ImageButton) findViewById(R.id.back);
         respuesta = (TextView)findViewById(R.id.respuesta);
         nombre = (TextInputEditText) findViewById(R.id.nombrePersona);
+        telefono = (TextInputEditText) findViewById(R.id.telPersona);
         r1=(RadioButton)findViewById(R.id.rdb1);
         r2=(RadioButton)findViewById(R.id.rdb2);
         cb1=(CheckBox)findViewById(R.id.cb1);
@@ -78,20 +81,21 @@ public class ClienteActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String usuario = nombre.getText().toString().trim();
-                Log.v("MyActivity", "Valor de USR: " + usuario);
+                String tel = telefono.getText().toString().trim();
 
-                if (usuario.isEmpty() || !(r1.isChecked() || r2.isChecked())) {
+                if (usuario.isEmpty() || tel.isEmpty()) {
                     respuesta.setText("Favor de llenar los campos");
                 } else if (r1.isChecked() && (!cb1.isChecked() && !cb2.isChecked())) {
                     respuesta.setText("Favor de seleccionar un tipo");
                 } else {
                     mascota.openForRead();
-                    if (mascota.existeDueno(usuario)) {
+                    if (mascota.existeDueno(usuario, tel)) {
                         Intent intent = new Intent(ClienteActivity.this, HomeActivity.class);
                         // Guardar el usuario en SharedPreferences
                         SharedPreferences prefs = getSharedPreferences("Nombre_Preferencias", MODE_PRIVATE);
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putString("usuario", usuario);
+                        editor.putString("telefono", tel);
                         editor.apply();
                         startActivity(intent);
                     } else {
