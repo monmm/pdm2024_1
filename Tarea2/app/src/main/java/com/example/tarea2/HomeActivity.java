@@ -55,7 +55,9 @@ public class HomeActivity extends DrawerMenuActivity {
         groomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(HomeActivity.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+                //iniciar grooming
+                Intent intent = new Intent(HomeActivity.this, GroomingActivity.class);
+                startActivity(intent);
             }
         });
         shopButton.setOnClickListener(new View.OnClickListener() {

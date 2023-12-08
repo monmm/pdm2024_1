@@ -1,15 +1,10 @@
 package com.example.tarea2;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -18,12 +13,9 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.tarea2.bdd.MascotaBDD;
-import com.example.tarea2.bdd.MascotaSQL;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class ClienteActivity extends AppCompatActivity {
 
@@ -100,7 +92,9 @@ public class ClienteActivity extends AppCompatActivity {
                         respuesta.setText("Favor de registrarse");
                     }
                 }
+
             }
+
         });
 
         grupo1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
