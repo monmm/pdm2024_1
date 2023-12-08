@@ -51,9 +51,8 @@ public abstract class DrawerMenuActivity extends AppCompatActivity {
 
                 if (item.getItemId() == R.id.home) {
                     opcionElegida = new Intent(DrawerMenuActivity.this, HomeActivity.class);
-                    mensaje = "Seleccionaste Home";
                 } else if (item.getItemId() == R.id.family) {
-                    mensaje = "Seleccionaste Perfil";
+                    opcionElegida = new Intent(DrawerMenuActivity.this, ProfileActivity.class);
                 } else if (item.getItemId() == R.id.groom) {
                     mensaje = "Seleccionaste Groom";
                 } else if (item.getItemId() == R.id.shop) {

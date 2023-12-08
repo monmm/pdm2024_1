@@ -1,6 +1,8 @@
 package com.example.tarea2.modelos;
 
-public class Mascota {
+import java.io.Serializable;
+
+public class Mascota implements Serializable {
 
     private int id;
     private String nombre;
@@ -99,16 +101,9 @@ public class Mascota {
 
     @Override
     public String toString() {
-        return "Mascota{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", sexo='" + sexo + '\'' +
-                ", nacimiento='" + nacimiento + '\'' +
-                ", raza='" + raza + '\'' +
-                ", dueno='" + dueno + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", cp='" + cp + '\'' +
-                '}';
+        return "Nombre: " + nombre +
+                "\nCumpleaños: " + nacimiento +
+                "\nSexo: " + sexo +
+                "\t\tRaza: " + raza;
     }
 }
