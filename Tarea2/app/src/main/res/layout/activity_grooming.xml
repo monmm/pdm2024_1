@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".GroomingActivity">
+    <LinearLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#FFC107"
+            android:scaleType="center"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:paddingLeft="25dp"
+            android:src="@drawable/logo_removebg"
+            android:contentDescription="Logo App">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFC107"
+            android:shadowColor="#009688"
+            android:text="Petty"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#387051"
+            android:textColorHighlight="#FFFFFF"
+            android:textDirection="firstStrongRtl"
+            android:textSize="80sp" />
+    </LinearLayout>
+    <!-- Agrega un ImageView para mostrar la imagen seleccionada -->
+    <ImageView
+        android:id="@+id/imageViewSelectedGrooming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@drawable/predeterminadogroom" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GroomingActivity">
+
+        <TextView
+            android:id="@+id/textViewType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Consiente a tu mascota con nuestros servicios:" />
+
+        <!-- Agrega más vistas según tus necesidades -->
+
+        <Spinner
+            android:id="@+id/spinnerGroomingType"
+            android:layout_width="367dp"
+            android:layout_height="61dp"
+            android:layout_below="@id/textViewType"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="47dp"
+            android:layout_marginEnd="16dp"
+            android:entries="@array/grooming_types"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/buttonShowMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_below="@id/spinnerGroomingType"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="139dp"
+            android:layout_marginTop="108dp"
+            android:layout_marginEnd="146dp"
+            android:layout_marginBottom="96dp"
+            android:text="Agendar Cita" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

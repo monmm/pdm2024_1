@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <!-- Perfil -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="#FFC107">
+
+        <ImageView
+            android:id="@+id/foto"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/logo_removebg"
+            android:contentDescription="Imagen de perfil" />
+
+        <!-- Sección de Dueno -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingHorizontal="16dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/dueno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#387051"
+                android:layout_marginBottom="8dp"
+                android:text="Hola!"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/telefono"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#387051"
+                android:text="Teléfono:"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <TextView
+                android:id="@+id/direccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#387051"
+                android:text="Dirección:"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#626262"
+        android:layout_margin="12dp"
+        android:text="Mascotas Registradas:"
+        android:textStyle="bold"/>
+
+    <ListView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chapterList" />
+
+</LinearLayout>
