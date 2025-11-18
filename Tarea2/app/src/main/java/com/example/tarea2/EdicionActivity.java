@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,9 +29,9 @@ public class EdicionActivity extends AppCompatActivity {
     private EditText direccion;
     private EditText cp;
 
-    RadioGroup radioGroup;
+    /*RadioGroup radioGroup;
     RadioButton machoRadioButton;
-    RadioButton hembraRadioButton;
+    RadioButton hembraRadioButton;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ public class EdicionActivity extends AppCompatActivity {
         direccion.setText(data.getDireccion());
 
         cp = findViewById(R.id.cp_input);
-        cp.setText(data.getCp());
+        cp.setText(data.getCp());  
 
         machoRadioButton = findViewById(R.id.macho);
         hembraRadioButton = findViewById(R.id.hembra);
