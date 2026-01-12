@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="grooming_types">
+        <item>
+            <name>Corte de pelo</name>
+        </item>
+        <item>
+            <name>Baño y secado</name>
+        </item>
+        <item>
+            <name>Limpieza de orejas</name>
+        </item>
+        <!-- Agrega más tipos según tus necesidades -->
+    </array>
+</resources>

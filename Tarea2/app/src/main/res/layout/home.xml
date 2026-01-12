@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Encabezado -->
+    <LinearLayout
+        android:id="@+id/header_title"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:orientation="horizontal"
+        android:background="#FFC107"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitEnd"
+            android:src="@drawable/logo_removebg"
+            android:contentDescription="Logo App">
+        </ImageView>
+    </LinearLayout>
+
+    <!-- C U E R P O -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/header_title">
+
+        <TextView
+            android:id="@+id/registro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:text="NOVEDADES" />
+
+        <!-- Imagen -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:background="#f2f2f2">
+
+            <ImageView
+                android:id="@+id/foto"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/profile"
+                android:contentDescription="Imagen de perfil" />
+
+            <!-- Contenido -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Título" />
+
+                <TextView
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="50sp"
+                    android:textColor="#626262"
+                    android:text="Contenido de la nota:\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed" />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="match_parent"
+                    android:layout_height="18sp"
+                    android:textAlignment="textEnd"
+                    android:textStyle="italic"
+                    android:textColor="#626262"
+                    android:text="Ver más..." />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Botones -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="50dp">
+
+            <Button
+                android:id="@+id/prof"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginRight="40dp"
+                android:paddingTop="10dp"
+                android:background="@drawable/btn_shape_round"
+                android:drawableTop="@drawable/family"
+                android:text="Perfil"
+                android:textColor="@color/white"
+                android:backgroundTint="#4a6f22"
+                android:drawableTint="@color/white"/>
+
+            <Button
+                android:id="@+id/groom"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:paddingTop="12dp"
+                android:background="@drawable/btn_shape_round"
+                android:drawableTop="@drawable/grooming"
+                android:text="Grooming"
+                android:textColor="@color/white"
+                android:backgroundTint="#4a6f22"
+                android:drawableTint="@color/white"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/shop"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:paddingTop="12dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/btn_shape_round"
+                android:drawableTop="@drawable/petshop"
+                android:text="Tienda"
+                android:textColor="@color/white"
+                android:backgroundTint="#4a6f22"
+                android:drawableTint="@color/white"/>
+
+            <Button
+                android:id="@+id/drug"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:paddingTop="12dp"
+                android:background="@drawable/btn_shape_round"
+                android:drawableTop="@drawable/pills"
+                android:backgroundTint="#4a6f22"
+                android:drawableTint="@color/white"
+                android:textColor="@color/white"
+                android:text="Farmacia" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- F O O T E R -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="#FFC107"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="MASCOTAS FELICES"
+            android:textColor="#000"
+            android:textSize="20sp" />
+    </LinearLayout>
+</RelativeLayout>
